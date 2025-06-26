@@ -1,2 +1,2 @@
-Compiler for the Turtle (trtl) programming language\n
+Compiler for the Turtle (trtl) programming language <br />
 [credits](docs/credits.md)
