@@ -1,2 +1,2 @@
 Compiler for the Turtle (trtl) programming language <br />
-[credits](docs/credits.md)
+[Credits: ](docs/credits.md)
