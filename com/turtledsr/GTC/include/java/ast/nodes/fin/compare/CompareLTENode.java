@@ -1,13 +1,13 @@
-package com.turtledsr.GTC.include.java.ast.nodes.fin;
+package com.turtledsr.GTC.include.java.ast.nodes.fin.compare;
 
 import com.turtledsr.GTC.include.java.ast.nodes.def.AbstractCompareNode;
 import com.turtledsr.GTC.include.java.ast.nodes.def.AbstractSyntaxNode;
 
-public final class CompareLTNode<T extends Comparable<? super T>, O extends Boolean> extends AbstractCompareNode<T, O> {
+public final class CompareLTENode<T extends Comparable<? super T>, O extends Boolean> extends AbstractCompareNode<T, O> {
   private AbstractSyntaxNode<T, T> param1;
   private AbstractSyntaxNode<T, T> param2;
 
-  public CompareLTNode(AbstractSyntaxNode<T, T> operand1, AbstractSyntaxNode<T, T> operand2) {
+  public CompareLTENode(AbstractSyntaxNode<T, T> operand1, AbstractSyntaxNode<T, T> operand2) {
     param1 = operand1;
     param2 = operand2;
   }
@@ -19,6 +19,6 @@ public final class CompareLTNode<T extends Comparable<? super T>, O extends Bool
   }
 
   protected Boolean compare() {
-    return (Boolean) (param1.evaluate().compareTo(param2.evaluate()) < 0);
+    return (Boolean) (param1.evaluate().compareTo(param2.evaluate()) <= 0);
   }
 }
