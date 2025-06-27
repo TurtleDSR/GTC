@@ -6,19 +6,19 @@ import java.util.LinkedList;
 import com.turtledsr.GTC.include.java.ast.nodes.def.AbstractProcessNode;
 import com.turtledsr.GTC.include.java.ast.nodes.def.AbstractSyntaxNode;
 
-public class GenericProcess<I extends Void, O extends Void> extends AbstractProcessNode<I, O> {
-  Deque<AbstractSyntaxNode<?, ?>> children;
+public class GenericProcess<T extends Void> extends AbstractProcessNode<T> {
+  Deque<AbstractSyntaxNode<?>> children;
 
   public GenericProcess() {
     children = new LinkedList<>();
   }
 
-  public GenericProcess(Deque<AbstractSyntaxNode<?, ?>> children) {
+  public GenericProcess(Deque<AbstractSyntaxNode<?>> children) {
     this.children = children;
   }
 
   @Override
-  public void pushChild(AbstractSyntaxNode<?, ?> child) {
+  public void pushChild(AbstractSyntaxNode<?> child) {
     children.addLast(child);
   }
 
@@ -33,8 +33,8 @@ public class GenericProcess<I extends Void, O extends Void> extends AbstractProc
   }
 
   @Override
-  public O evaluate() {
-    for (AbstractSyntaxNode<?,?> cur : children) {
+  public T evaluate() {
+    for (AbstractSyntaxNode<?> cur : children) {
       cur.evaluate();
     }
     return null;

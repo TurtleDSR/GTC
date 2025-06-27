@@ -1,5 +1,5 @@
 package com.turtledsr.GTC.include.java.ast.nodes.def;
 
-public abstract class AbstractCompareNode<T extends Comparable<? super T>, O extends Boolean> extends AbstractSyntaxNode<T, O> {
+public abstract class AbstractCompareNode<T extends Boolean> extends AbstractSyntaxNode<T> {
   protected abstract Boolean compare();
 }
